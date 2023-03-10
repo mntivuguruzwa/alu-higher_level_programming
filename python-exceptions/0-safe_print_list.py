@@ -1,6 +1,13 @@
 #!/usr/bin/python3
-def square_matrix_simple(matrix=[]):
-    if not matrix:
+def safe_print_list(my_list=[], x=0):
+    try:
+        count = 0
+        while count < x:
+            print("{}".format(my_list[count]), end='')
+            count += 1
         print()
-    return [[item**2 for item in row] for row in matrix]
-
+        return count
+    except IndexError:
+        print()
+        return count
+        pass
